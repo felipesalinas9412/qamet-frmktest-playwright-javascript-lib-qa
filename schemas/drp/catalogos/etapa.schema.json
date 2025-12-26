@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "codEtapa": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "txtEtapa": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": ["codEtapa", "txtEtapa"],
+    "additionalProperties": false
+  }
+}

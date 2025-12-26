@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "fecVctoPoliza": { "type": "string", "format": "date-time" },
+      "numPoliza": { "type": "string" },
+      "codCia": { "type": "integer" },
+      "nomCia": { "type": "string" },
+      "codRamo": { "type": "integer" },
+      "nomRamo": { "type": "string" },
+      "lobType": { "type": "string" },
+      "lobDesc": { "type": "string" },
+      "codAgt": { "type": "integer" },
+      "nomAgt": { "type": "string" },
+      "codNivel3": { "type": "integer" },
+      "nomNivel3": { "type": "string" },
+      "codCanal": { "type": "integer" },
+      "txtCanal": { "type": "string" },
+      "codUnidad": { "type": "integer" },
+      "txtUnidad": { "type": "string" },
+      "codFuente": { "type": "integer" },
+      "txtFuente": { "type": "string" },
+      "codEtapa": { "type": "integer" },
+      "txtEtapa": { "type": "string" },
+      "mcaRenov": { "type": "string", "enum": ["S", "N"] },
+      "mcaIncidencia": { "type": "string", "enum": ["S", "N"] },
+      "mcaControlTecnico": { "type": "string", "enum": ["S", "N"] },
+      "mcaImagen": { "type": "string", "enum": ["S", "N"] },
+      "mcaPolizaAnulada": { "type": "string", "enum": ["S", "N"] },
+      "impPrima": { "type": "number" },
+      "txtEnProcesoRazon": { "type": ["string", "null"] },
+      "codStatus": { "type": "integer" },
+      "txtStatus": { "type": "string" },
+      "numDiasAntelacion": { "type": "integer" }
+    },
+    "required": [
+      "fecVctoPoliza", "numPoliza", "codCia", "nomCia", "codRamo", "nomRamo",
+      "lobType", "lobDesc", "codAgt", "nomAgt", "codNivel3", "nomNivel3",
+      "codCanal", "txtCanal", "codUnidad", "txtUnidad", "codFuente", "txtFuente",
+      "codEtapa", "txtEtapa", "mcaRenov", "mcaIncidencia", "mcaControlTecnico",
+      "mcaImagen", "mcaPolizaAnulada", "impPrima", "txtEnProcesoRazon",
+      "codStatus", "txtStatus", "numDiasAntelacion"
+    ],
+    "additionalProperties": false
+  }
+}

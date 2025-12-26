@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@api/*": [
+        "src/api/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@schemas/*": [
+        "schemas/*"
+      ],
+      "@data/*": [
+        "data/*"
+      ],
+      "@tests/*": [
+        "tests/*"
+      ]
+    }
+  }
+}

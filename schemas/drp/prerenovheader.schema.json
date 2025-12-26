@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "fecProc": { "type": "string", "format": "date-time" },
+      "codCia": { "type": "integer" },
+      "codRamo": { "type": "integer" },
+      "codUsr": { "type": "string" },
+      "fecActu": { "type": "string", "format": "date-time" },
+      "tipCorrida": { "type": "string", "enum": ["M"] }
+    },
+    "required": ["fecProc", "codCia", "codRamo", "codUsr", "fecActu", "tipCorrida"],
+    "additionalProperties": false
+  }
+}

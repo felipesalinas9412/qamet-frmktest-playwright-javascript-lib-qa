@@ -1,0 +1,36 @@
+{
+  "GroupRegistrationId": 0,
+  "GroupNumber": "357185",
+  "Description": "Empleados",
+  "RegistrationDateFrom": "2025-08-01",
+  "RegistrationDateTo": "2025-08-31",
+  "PolicyEffectiveDate": "2004-06-01",
+  "EmployerContribution": 120.0,
+  "GroupEmailContact": "jcolonc@mapfrepr.com;fpereira@mapfrepr.com",
+  "ProducerNumber": "(787)-888-8888",
+  "EmployerContributionFlag": true,
+  "EmloadPlanNumber": "MFC - 71",
+  "EmloadClass": "2A",
+  "EmloadPCS": "W603 Q096",
+  "EmloadSpoBenClass": "A",
+  "EmloadDepBenClass": "A",
+  "GroupType": "C",
+  "PlansByLocationFlag": true,
+  "EmloadPerLocationFlag": false,
+  "LifeFlag": false,
+  "LifeOptionalFlag": null,
+  "JointFlag": true,
+  "ColateralFlag": true,
+  "Active": true,
+  "CreatedBy": "EMUNIZ",
+  "CreatedDate": "2025-08-05",
+  "GroupRates": [
+    { "RateId": 0, "GroupRegistrationId": null, "Location": "000", "Plan": "High", "CoverageType": "Single", "HealthRate": 100, "MajorMedical": null, "Dental": null, "Life": null, "ColateralRate": 10, "Status": "I", "GroupRegistration": null, "Registrations": null },
+    { "RateId": 0, "GroupRegistrationId": null, "Location": "000", "Plan": "High", "CoverageType": "Couple", "HealthRate": 110, "MajorMedical": null, "Dental": null, "Life": null, "ColateralRate": 25, "Status": "I", "GroupRegistration": null, "Registrations": null },
+    { "RateId": 0, "GroupRegistrationId": null, "Location": "000", "Plan": "High", "CoverageType": "Family", "HealthRate": 120, "MajorMedical": null, "Dental": null, "Life": null, "ColateralRate": 35, "Status": "I", "GroupRegistration": null, "Registrations": null }
+  ],
+  "GroupRegistrationLocations": [
+    { "GroupRegistrationLocationId": 0, "GroupRegistrationId": 0, "Location": "000", "EmloadPlanNumber": "", "EmloadClass": "", "EmloadPCS": "", "EmloadSpoBenClass": "", "EmloadDepBenClass": "", "CreatedBy": "EMUNIZ", "CreatedDate": "2025-08-05", "GroupRegistration": null }
+  ],
+  "Registrations": []
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "codRamo": { "type": "integer" },
+      "codCia": { "type": "integer" },
+      "lobType": { "type": "string", "minLength": 1 },
+      "mcaInh": { "type": "string", "enum": ["N", "S"] },
+      "codUsr": { "type": "string", "minLength": 1 },
+      "fecActu": { "type": "string", "format": "date-time" },
+      "fk_A1001800": {
+        "anyOf": [
+          { "type": "string" },
+          { "type": "null" }
+        ]
+      },
+      "fk_DrpLobType": {
+        "anyOf": [
+          { "type": "string" },
+          { "type": "null" }
+        ]
+      }
+    },
+    "required": ["codRamo", "codCia", "lobType", "mcaInh", "codUsr", "fecActu", "fk_A1001800", "fk_DrpLobType"],
+    "additionalProperties": false
+  }
+}
+

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "lobType": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "lobDesc": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": ["lobType", "lobDesc"],
+    "additionalProperties": false
+  }
+}

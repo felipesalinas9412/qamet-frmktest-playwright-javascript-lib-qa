@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GroupRegistrationBasicEjemplohastatenerelReal",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "GroupRegistrationId": { "type": "integer" },
+    "GroupNumber": { "type": "string" },
+    "Description": { "type": "string" },
+
+    "RegistrationDateFrom": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "RegistrationDateTo":   { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "PolicyEffectiveDate":  { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+
+    "EmployerContribution":   { "type": ["number", "null"] },
+    "GroupEmailContact":      { "type": "string" },
+    "ProducerNumber":         { "type": "string" },
+    "EmployerContributionFlag": { "type": ["boolean", "null"] },
+
+    "EmloadPlanNumber":  { "type": "string" },
+    "EmloadClass":       { "type": "string" },
+    "EmloadPCS":         { "type": "string" },
+    "EmloadSpoBenClass": { "type": "string" },
+    "EmloadDepBenClass": { "type": "string" },
+
+    "GroupType": { "type": "string" },
+
+    "PlansByLocationFlag": { "type": ["boolean", "null"] },
+    "EmloadPerLocationFlag": { "type": ["boolean", "null"] },
+    "LifeFlag": { "type": ["boolean", "null"] },
+    "LifeOptionalFlag": { "type": ["boolean", "null"] },
+    "JointFlag": { "type": ["boolean", "null"] },
+    "ColateralFlag": { "type": ["boolean", "null"] },
+
+    "Active": { "type": ["boolean", "null"] },
+
+    "CreatedBy":   { "type": "string" },
+    "CreatedDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+  },
+  "required": [
+    "GroupRegistrationId",
+    "GroupNumber",
+    "Description",
+    "RegistrationDateFrom",
+    "RegistrationDateTo",
+    "PolicyEffectiveDate",
+    "CreatedBy",
+    "CreatedDate"
+  ]
+}

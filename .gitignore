@@ -1,0 +1,15 @@
+# Add folders and files to be ignored by Git below
+
+.env
+node_modules/
+dist/
+.DS_Store
+.vscode/
+*.log
+
+playwright-report/
+test
+.features-gen
+allure-reports/
+allure-results/
+test-results

@@ -1,0 +1,839 @@
+{
+	"info": {
+		"_postman_id": "32fc64f3-414b-40cc-9aef-ec3c0e437b0b",
+		"name": "003 - REEF - HN Servicios TRON AUTOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48245700",
+		"_collection_link": "https://mapfre-reef-qb-es-1824511.postman.co/workspace/mapfre.reef.qb.es's-Workspace~e54d9c62-6e96-433d-82c4-c500978c9de2/collection/48245700-32fc64f3-414b-40cc-9aef-ec3c0e437b0b?action=share&source=collection_link&creator=48245700"
+	},
+	"item": [
+		{
+			"name": "1 General Data",
+			"item": [
+				{
+					"name": "Obtener usuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica si el código de estado es 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "cnyVal",
+								"value": "{{cnyVal}}",
+								"type": "text"
+							},
+							{
+								"key": "cmpVal",
+								"value": "{{cmpVal}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Endpoint}}/{{CMN}}/newtron/api/common/user/application/{{usrVal}}",
+							"host": [
+								"{{Endpoint}}"
+							],
+							"path": [
+								"{{CMN}}",
+								"newtron",
+								"api",
+								"common",
+								"user",
+								"application",
+								"{{usrVal}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Valores",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica si el código de estado es 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "IngVal",
+								"value": "{{IngVal}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lstIdn\": \"TA300001\",\r\n    \"lstTyp\": \"V\",\r\n    \"insVal\": \"TRN\",\r\n    \"lstVrs\": \"2\",\r\n    \"lstVal\": {\r\n        \"COD_NIVEL3\": \"9999\",\r\n        \"DVVAL_PESO\": \"L\",\r\n        \"COD_NIVEL2\": \"999\",\r\n        \"COD_NIVEL1\": \"99\",\r\n        \"DVCOD_MODALIDAD_POLIZA\": \"30001\",\r\n        \"DVNUM_PLAZAS\": \"5\",\r\n        \"LNG_VAL\": \"ES\",\r\n        \"CMP_VAL\": \"5\",\r\n        \"NUM_CONTRATO\": \"\",\r\n        \"COD_TIP_VEHI\": \"1\",\r\n        \"USR_VAL\": \"TENTOR1\",\r\n        \"COD_COB\": \"3005\",\r\n        \"NUM_POLIZA_GRUPO\": \"\",\r\n        \"DVCOD_USO_VEHI\": \"2\",\r\n        \"FEC_VALIDEZ\": \"01012000\",\r\n        \"NUM_SUBCONTRATO\": \"\",\r\n        \"COD_CANAL3\": \"\",\r\n        \"COD_RAMO\": \"300\",\r\n        \"COD_CANAL2\": \"\",\r\n        \"COD_AGT\": \"\",\r\n        \"COD_CANAL1\": \"\",\r\n        \"COD_CAMPO\": \"COD_GASTOS_MED_3005\",\r\n        \"COD_MON\": \"5\"\r\n    },\r\n    \"cchChc\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Endpoint}}/{{CMN}}/newtron/api/common/lists?cmpVal={{cmpVal}}",
+							"host": [
+								"{{Endpoint}}"
+							],
+							"path": [
+								"{{CMN}}",
+								"newtron",
+								"api",
+								"common",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "cmpVal",
+									"value": "{{cmpVal}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2 Coverages and Prices and Quote",
+			"item": [
+				{
+					"name": "Listas Valores",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica si el código de estado es 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lngVal",
+								"value": "{{lngVal}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lstIdn\": \"DF_CMN_NWT_XX_VRB_CNC\",\r\n    \"lstTyp\": \"V\",\r\n    \"insVal\": \"TRN\",\r\n    \"lstVrs\": \"14\",\r\n    \"lstVal\": {\r\n        \"COD_NIVEL3\": \"\",\r\n        \"COD_NIVEL2\": \"\",\r\n        \"COD_NIVEL1\": \"\",\r\n        \"LNG_VAL\": \"ES\",\r\n        \"CMP_VAL\": \"5\",\r\n        \"NUM_CONTRATO\": \"\",\r\n        \"USR_VAL\": \"TENTOR1\",\r\n        \"COD_COB\": \"\",\r\n        \"NUM_POLIZA_GRUPO\": \"\",\r\n        \"FEC_VALIDEZ\": \"01011900\",\r\n        \"NUM_SUBCONTRATO\": \"\",\r\n        \"NUM_POLIZA\": \"\",\r\n        \"COD_CANAL3\": \"\",\r\n        \"COD_RAMO\": \"300\",\r\n        \"COD_CANAL2\": \"\",\r\n        \"COD_AGT\": \"255\",\r\n        \"COD_CANAL1\": \"\",\r\n        \"COD_CAMPO\": \"POLIZA_GRUPO_WEB\",\r\n        \"COD_MON\": \"\"\r\n    },\r\n    \"cchChc\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Endpoint}}/{{CMN}}/newtron/api/common/lists?cmpVal={{cmpVal}}",
+							"host": [
+								"{{Endpoint}}"
+							],
+							"path": [
+								"{{CMN}}",
+								"newtron",
+								"api",
+								"common",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "cmpVal",
+									"value": "{{cmpVal}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cotización",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica si el código de estado es 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"try {\r",
+									"    const array = pm.response.json(); // La respuesta ES el array principal\r",
+									"\r",
+									"    if (!Array.isArray(array)) {\r",
+									"        console.error(\"❌ La respuesta no es un array.\");\r",
+									"        return;\r",
+									"    }\r",
+									"\r",
+									"    for (let i = 0; i < array.length; i++) {\r",
+									"        const item = array[i];\r",
+									"\r",
+									"        // Verifica que oPlyPmcCT sea un array\r",
+									"        const subArray = item?.oPlyPmcCT;\r",
+									"        if (Array.isArray(subArray)) {\r",
+									"            for (let j = 0; j < subArray.length; j++) {\r",
+									"                const subItem = subArray[j];\r",
+									"                const valor = subItem?.plyVal;\r",
+									"\r",
+									"                if (valor !== undefined) {\r",
+									"                    console.log(` plyVal encontrado en posición [${i}][${j}]:`, valor);\r",
+									"                    pm.environment.set(\"plyVal\", valor);\r",
+									"                    return;\r",
+									"                }\r",
+									"            }\r",
+									"        }\r",
+									"    }\r",
+									"\r",
+									"    console.warn(\" No se encontró ningún plyVal en los subarrays oPlyPmcCT.\");\r",
+									"\r",
+									"} catch (error) {\r",
+									"    console.error(\" Error al procesar la respuesta:\", error);\r",
+									"}\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lngVal",
+								"value": "{{lngVal}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"oPlyAtrCT\": [\r\n        {\r\n            \"oPlyAtrPT\": [\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_TIP_VEHI\",\r\n                        \"fldValVal\": \"1\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_NIVEL1\",\r\n                        \"fldValVal\": \"50\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_NIVEL2\",\r\n                        \"fldValVal\": \"501\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_NIVEL3\",\r\n                        \"fldValVal\": \"5001\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"NUM_POLIZA_GRUPO\",\r\n                        \"fldValVal\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"NUM_CONTRATO\",\r\n                        \"fldValVal\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"MCA_CONSOLIDA\",\r\n                        \"fldValVal\": \"S\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_MON\",\r\n                        \"fldValVal\": \"5\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_MARCA\",\r\n                        \"fldValVal\": \"1\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"VAL_PESO\",\r\n                        \"fldValVal\": \"L\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"TIP_ACTIVIDAD\",\r\n                        \"fldValVal\": \"999\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_MODELO\",\r\n                        \"fldValVal\": \"3\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"ANIO_SUB_MODELO\",\r\n                        \"fldValVal\": \"2010\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_SUB_MODELO\",\r\n                        \"fldValVal\": \"3\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_USO_VEHI\",\r\n                        \"fldValVal\": \"1\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"VAL_SUB_MODELO\",\r\n                        \"fldValVal\": \"100000\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"VAL_ACCESORIO\",\r\n                        \"fldValVal\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"VAL_TOTAL_VEHI\",\r\n                        \"fldValVal\": \"100000\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"TIP_AMBITO_CIRCULACION\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"FEC_VALIDEZ_TARIFA\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"IMP_GASTOS_EMISION\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"MCA_IMPORTADO\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"EDAD_VEHI\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"TIP_DESTINO_VEHI\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"TIP_MERCANCIA\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_FRACC_PAGO\",\r\n                        \"fldValVal\": \"3\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_CAT_VEHI\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"TIP_CAJA_CAMBIO\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"NUM_PLAZAS\",\r\n                        \"fldValVal\": \"5\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_DANIOS_MAT_3001\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_DANIOS_PER_3001\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_DANIOS_MAT_3002\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_DANIOS_PER_3002\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_DANIOS_PER_3004\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_GASTOS_MED_3004\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_DANIOS_PER_3005\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_GASTOS_MED_3005\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"IMP_AJU_TECNICO\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"IMP_AJU_TECNICO_A\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"IMP_AJU_COMERCIAL\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"IMP_AJU_COMERCIAL_A\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"MCA_EXONERA_IMP\",\r\n                        \"fldValVal\": \"N\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"TIP_DOCUM\",\r\n                        \"fldValVal\": \"DNI\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"MCA_FISICO\",\r\n                        \"fldValVal\": \"S\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_DOCUM\",\r\n                        \"fldValVal\": \"0101198112378\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"NOM_TERCERO\",\r\n                        \"fldValVal\": \"JUAN\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"NOM2_TERCERO\",\r\n                        \"fldValVal\": \"MANUEL\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"APE1_TERCERO\",\r\n                        \"fldValVal\": \"SANCHEZ\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"APE2_TERCERO\",\r\n                        \"fldValVal\": \"LOPEZ\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"TIP_CARNET_EXONERA\",\r\n                        \"fldValVal\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"NUM_CARNET_DIPLOMATICO\",\r\n                        \"fldValVal\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"NUM_OCE\",\r\n                        \"fldValVal\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"EMAIL\",\r\n                        \"fldValVal\": \"4\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"EMAIL_NUEVO\",\r\n                        \"fldValVal\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"TELEFONO\",\r\n                        \"fldValVal\": \"2\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"TELEFONO_NUEVO\",\r\n                        \"fldValVal\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"MOVIL\",\r\n                        \"fldValVal\": \"1\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"MOVIL_NUEVO\",\r\n                        \"fldValVal\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"MCA_COMPRA_AGENCIA\",\r\n                        \"fldValVal\": \"N\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"FEC_COMPRA\",\r\n                        \"fldValVal\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"TIP_GESTOR\",\r\n                        \"fldValVal\": \"2\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"MCA_SELECCION_3013\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"MCA_SELECCION_3009\",\r\n                        \"fldValVal\": null\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"DVTMV_PCT_SINIESTRALIDAD\",\r\n                        \"fldValVal\": \"0\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"COD_AGT\",\r\n                        \"fldValVal\": \"255\"\r\n                    }\r\n                },\r\n                {\r\n                    \"oPlyAtrS\": {\r\n                        \"fldNam\": \"MCA_EMI_WEB\",\r\n                        \"fldValVal\": \"S\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Endpoint}}/{{ISU}}/newtron/api/issue/business_line/{{Branch}}/simulationV1Simplified?cmpVal={{cmpVal}}&usrVal={{usrVal}}",
+							"host": [
+								"{{Endpoint}}"
+							],
+							"path": [
+								"{{ISU}}",
+								"newtron",
+								"api",
+								"issue",
+								"business_line",
+								"{{Branch}}",
+								"simulationV1Simplified"
+							],
+							"query": [
+								{
+									"key": "cmpVal",
+									"value": "{{cmpVal}}"
+								},
+								{
+									"key": "usrVal",
+									"value": "{{usrVal}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3 Itv and Quote",
+			"item": [
+				{
+					"name": "Inspección del vehiculo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica si el código de estado es 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lngVal",
+								"value": "{{lngVal}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Endpoint}}/{{ISU}}/newtron/api/issue/business_line/policy/MNLNMF34563BNM89/inspection/queryByChassis?cmpVal={{cmpVal}}&lsaRskVal=1&usrVal={{usrVal}} ",
+							"host": [
+								"{{Endpoint}}"
+							],
+							"path": [
+								"{{ISU}}",
+								"newtron",
+								"api",
+								"issue",
+								"business_line",
+								"policy",
+								"MNLNMF34563BNM89",
+								"inspection",
+								"queryByChassis"
+							],
+							"query": [
+								{
+									"key": "cmpVal",
+									"value": "{{cmpVal}}"
+								},
+								{
+									"key": "lsaRskVal",
+									"value": "1"
+								},
+								{
+									"key": "usrVal",
+									"value": "{{usrVal}} "
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4 Participant Data and Quote",
+			"item": [
+				{
+					"name": "Lista Valores",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica si el código de estado es 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lngVal",
+								"value": "{{lngVal}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lstIdn\": \"A2100420\",\r\n    \"lstTyp\": \"V\",\r\n    \"insVal\": \"TRN\",\r\n    \"lstVrs\": \"5\",\r\n    \"lstVal\": {\r\n        \"COD_MARCA\": \"1\",\r\n        \"CMP_VAL\": \"5\",\r\n        \"COD_TIP_VEHI\": \"1\",\r\n        \"USR_VAL\": \"TENTOR1\",\r\n        \"LNG_VAL\": \"ES\"\r\n    },\r\n    \"cchChc\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Endpoint}}/{{CMN}}/newtron/api/common/lists?cmpVal={{cmpVal}}&usrVal={{usrVal}}",
+							"host": [
+								"{{Endpoint}}"
+							],
+							"path": [
+								"{{CMN}}",
+								"newtron",
+								"api",
+								"common",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "cmpVal",
+									"value": "{{cmpVal}}"
+								},
+								{
+									"key": "usrVal",
+									"value": "{{usrVal}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "5 Risk Data and Quote",
+			"item": [
+				{
+					"name": "Lista Valores",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica si el código de estado es 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lngVal",
+								"value": "{{lngVal}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lstIdn\": \"G2990005\",\r\n    \"lstTyp\": \"V\",\r\n    \"insVal\": \"TRN\",\r\n    \"lstVrs\": \"1\",\r\n    \"lstVal\": {\r\n        \"CMP_VAL\": \"5\",\r\n        \"USR_VAL\": \"TENTOR1\",\r\n        \"FEC_VALIDEZ\": \"01011900\",\r\n        \"COD_RAMO\": \"300\",\r\n        \"LNG_VAL\": \"ES\"\r\n    },\r\n    \"cchChc\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Endpoint}}/{{CMN}}/newtron/api/common/lists?cmpVal={{cmpVal}}&usrVal={{usrVal}}",
+							"host": [
+								"{{Endpoint}}"
+							],
+							"path": [
+								"{{CMN}}",
+								"newtron",
+								"api",
+								"common",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "cmpVal",
+									"value": "{{cmpVal}}"
+								},
+								{
+									"key": "usrVal",
+									"value": "{{usrVal}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "6 Payment Data and Quote",
+			"item": [
+				{
+					"name": "Presupuesto rechazado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica si el código de estado es 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    console.log(\" Error: La solicitud no fue válida (400)\");\r",
+									"});\r",
+									"pm.test(\"El contenido coincide con la cadena de texto\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"NIVEL DE ERROR RECHAZADO\");\r",
+									"});\r",
+									"\r",
+									"const respuesta = pm.response.json();\r",
+									"const IdCotizacion = respuesta.token;\r",
+									"pm.environment.set(\"qtnVal\", IdCotizacion);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lngVal",
+								"value": "{{lngVal}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oPlyInePT\": [\r\n        {\r\n            \"oPlyIneS\": {\r\n                \"cmpVal\": 5,\r\n                \"qtnVal\": \"C000000073539\",\r\n                \"enrSqn\": 0,\r\n                \"rskVal\": 1,\r\n                \"aplEnrSqn\": 0,\r\n                \"aplVal\": 0,\r\n                \"thpDcmTypVal\": \"CR\",\r\n                \"thpDcmVal\": \"00545451543535\",\r\n                \"bnfTypVal\": 2,\r\n                \"csnAmn\": null,\r\n                \"csnExpDat\": null,\r\n                \"lonVal\": null,\r\n                \"parPer\": null,\r\n                \"plyRskManThp\": \"N\",\r\n                \"rlnTypVal\": null,\r\n                \"sbtVal\": null,\r\n                \"sqnVal\": 1,\r\n                \"thpRskCll\": \"N\",\r\n                \"opvRow\": \"S\",\r\n                \"rowRmv\": \"N\",\r\n                \"adrSqnVal\": null,\r\n                \"cnhSqnVal\": null\r\n            },\r\n            \"oThpIpcC\": {\r\n                \"oThpAcvP\": {\r\n                    \"oThpAcvS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"CR\",\r\n                        \"thpDcmVal\": \"00545451543535\",\r\n                        \"thpAcvVal\": 1,\r\n                        \"mdfDat\": 1760354024029,\r\n                        \"spl\": \"N\",\r\n                        \"dcmGnr\": \"N\"\r\n                    }\r\n                },\r\n                \"oThpPrsP\": {\r\n                    \"oThpPrsS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"CR\",\r\n                        \"thpDcmVal\": \"00545451543535\",\r\n                        \"phyPrs\": \"S\",\r\n                        \"sexVal\": \"1\",\r\n                        \"thpDcmCck\": \"N\",\r\n                        \"thpNam\": \"GJFGGFH\",\r\n                        \"thpFrsSrn\": \"GFHFGHFGHFGHFGH\",\r\n                        \"brdDat\": 1484179200000,\r\n                        \"brtCnyVal\": \"AFG\",\r\n                        \"mrtStsVal\": \"C\",\r\n                        \"ntnVal\": \"AFG\",\r\n                        \"prfVal\": 1,\r\n                        \"jobVal\": 1,\r\n                        \"cstCtgVal\": \"PERS\",\r\n                        \"emnTypVal\": \"NEG\",\r\n                        \"fnpManAcvVal\": \"F002\",\r\n                        \"lngVal\": \"ES\",\r\n                        \"mdfDat\": 1760354024029,\r\n                        \"prsPce\": \"N\",\r\n                        \"ntnTypVal\": \"1\",\r\n                        \"slfAcn\": \"N\",\r\n                        \"txlOthCny\": \"N\"\r\n                    }\r\n                },\r\n                \"oThpAdrPT\": [],\r\n                \"oThpCntPT\": [\r\n                    {\r\n                        \"oThpCntS\": {\r\n                            \"cmpVal\": 5,\r\n                            \"thpDcmTypVal\": \"CR\",\r\n                            \"thpDcmVal\": \"00545451543535\",\r\n                            \"thpAcvVal\": 1,\r\n                            \"cntTypVal\": \"1\",\r\n                            \"dsbRow\": \"N\",\r\n                            \"mdfDat\": 1760354024029,\r\n                            \"vldDat\": 1760354024029,\r\n                            \"cnhTypVal\": \"3\",\r\n                            \"cnhUseTypVal\": \"1\",\r\n                            \"cnhTxtVal\": \"50470602536\",\r\n                            \"cnhCck\": \"N\",\r\n                            \"rfrThp\": \"N\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"oThpCntS\": {\r\n                            \"cmpVal\": 5,\r\n                            \"thpDcmTypVal\": \"CR\",\r\n                            \"thpDcmVal\": \"00545451543535\",\r\n                            \"thpAcvVal\": 1,\r\n                            \"cntTypVal\": \"1\",\r\n                            \"dsbRow\": \"N\",\r\n                            \"mdfDat\": 1760354024029,\r\n                            \"vldDat\": 1760354024029,\r\n                            \"cnhTypVal\": \"7\",\r\n                            \"cnhUseTypVal\": \"3\",\r\n                            \"cnhTxtVal\": \"GFGHGH\",\r\n                            \"cntDprVal\": \"0001\",\r\n                            \"cntPstVal\": \"0001\",\r\n                            \"cnhCck\": \"N\",\r\n                            \"rfrThp\": \"N\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"oThpCntS\": {\r\n                            \"cmpVal\": 5,\r\n                            \"thpDcmTypVal\": \"CR\",\r\n                            \"thpDcmVal\": \"00545451543535\",\r\n                            \"thpAcvVal\": 1,\r\n                            \"cntTypVal\": \"1\",\r\n                            \"dsbRow\": \"N\",\r\n                            \"mdfDat\": 1760354024029,\r\n                            \"vldDat\": 1760354024029,\r\n                            \"cnhTypVal\": \"1\",\r\n                            \"cnhUseTypVal\": \"1\",\r\n                            \"cnhTxtVal\": \"T@MAPFRE.COM\",\r\n                            \"cnhCck\": \"N\",\r\n                            \"rfrThp\": \"N\"\r\n                        }\r\n                    }\r\n                ],\r\n                \"oThpPcmPT\": [],\r\n                \"oThpLcnPT\": [],\r\n                \"oThpInyP\": {\r\n                    \"oThpInyS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"CR\",\r\n                        \"thpDcmVal\": \"00545451543535\",\r\n                        \"thpAcvVal\": 1,\r\n                        \"dsbRow\": \"N\"\r\n                    }\r\n                },\r\n                \"oThpArmPT\": [],\r\n                \"oThpTmnPT\": [],\r\n                \"oThpPcePT\": [],\r\n                \"oThpShlPT\": [],\r\n                \"oThpLgrPT\": [],\r\n                \"oTpdAlpPT\": [],\r\n                \"oThpUniPT\": [],\r\n                \"oThpTxlPT\": []\r\n            }\r\n        },\r\n        {\r\n            \"oPlyIneS\": {\r\n                \"cmpVal\": 5,\r\n                \"qtnVal\": \"C000000073539\",\r\n                \"enrSqn\": 0,\r\n                \"rskVal\": 0,\r\n                \"aplEnrSqn\": 0,\r\n                \"aplVal\": 0,\r\n                \"thpDcmTypVal\": \"CR\",\r\n                \"thpDcmVal\": \"00545451543535\",\r\n                \"bnfTypVal\": 21,\r\n                \"csnAmn\": null,\r\n                \"csnExpDat\": null,\r\n                \"lonVal\": null,\r\n                \"parPer\": 100,\r\n                \"plyRskManThp\": \"N\",\r\n                \"rlnTypVal\": null,\r\n                \"sbtVal\": null,\r\n                \"sqnVal\": 1,\r\n                \"thpRskCll\": \"N\",\r\n                \"opvRow\": \"S\",\r\n                \"rowRmv\": \"N\",\r\n                \"adrSqnVal\": null,\r\n                \"cnhSqnVal\": null\r\n            },\r\n            \"oThpIpcC\": {\r\n                \"oThpAcvP\": {\r\n                    \"oThpAcvS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"CR\",\r\n                        \"thpDcmVal\": \"00545451543535\",\r\n                        \"thpAcvVal\": 1,\r\n                        \"mdfDat\": 1760354024029,\r\n                        \"spl\": \"N\",\r\n                        \"dcmGnr\": \"N\"\r\n                    }\r\n                },\r\n                \"oThpPrsP\": {\r\n                    \"oThpPrsS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"CR\",\r\n                        \"thpDcmVal\": \"00545451543535\",\r\n                        \"phyPrs\": \"S\",\r\n                        \"sexVal\": \"\",\r\n                        \"thpDcmCck\": \"N\",\r\n                        \"thpNam\": \"\",\r\n                        \"thpFrsSrn\": \"\",\r\n                        \"brdDat\": null,\r\n                        \"brtCnyVal\": \"\",\r\n                        \"mrtStsVal\": \"\",\r\n                        \"ntnVal\": \"\",\r\n                        \"cstCtgVal\": \"\",\r\n                        \"emnTypVal\": \"\",\r\n                        \"fnpManAcvVal\": \"\",\r\n                        \"lngVal\": \"ES\",\r\n                        \"mdfDat\": 1760354024029,\r\n                        \"prsPce\": \"\",\r\n                        \"ntnTypVal\": \"1\",\r\n                        \"slfAcn\": \"N\",\r\n                        \"txlOthCny\": \"N\"\r\n                    }\r\n                },\r\n                \"oThpAdrPT\": [],\r\n                \"oThpCntPT\": [],\r\n                \"oThpPcmPT\": [],\r\n                \"oThpLcnPT\": [],\r\n                \"oThpInyP\": {\r\n                    \"oThpInyS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"CR\",\r\n                        \"thpDcmVal\": \"00545451543535\",\r\n                        \"thpAcvVal\": 1,\r\n                        \"dsbRow\": \"N\"\r\n                    }\r\n                },\r\n                \"oThpArmPT\": [],\r\n                \"oThpTmnPT\": [],\r\n                \"oThpPcePT\": [],\r\n                \"oThpShlPT\": [],\r\n                \"oThpLgrPT\": [],\r\n                \"oTpdAlpPT\": [],\r\n                \"oThpUniPT\": [],\r\n                \"oThpTxlPT\": []\r\n            },\r\n            \"oThpLgrC\": {}\r\n        },\r\n        {\r\n            \"oPlyIneS\": {\r\n                \"cmpVal\": 5,\r\n                \"qtnVal\": \"C000000073539\",\r\n                \"enrSqn\": 0,\r\n                \"rskVal\": 0,\r\n                \"aplEnrSqn\": 0,\r\n                \"aplVal\": 0,\r\n                \"thpDcmTypVal\": \"CR\",\r\n                \"thpDcmVal\": \"00545451543535\",\r\n                \"bnfTypVal\": 0,\r\n                \"csnAmn\": null,\r\n                \"csnExpDat\": null,\r\n                \"lonVal\": null,\r\n                \"parPer\": null,\r\n                \"plyRskManThp\": \"N\",\r\n                \"rlnTypVal\": null,\r\n                \"sbtVal\": null,\r\n                \"sqnVal\": 1,\r\n                \"thpRskCll\": \"N\",\r\n                \"opvRow\": \"S\",\r\n                \"rowRmv\": \"N\",\r\n                \"adrSqnVal\": null,\r\n                \"cnhSqnVal\": null\r\n            },\r\n            \"oThpIpcC\": {\r\n                \"oThpAcvP\": {\r\n                    \"oThpAcvS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"CR\",\r\n                        \"thpDcmVal\": \"00545451543535\",\r\n                        \"thpAcvVal\": 1,\r\n                        \"mdfDat\": 1760354024029,\r\n                        \"spl\": \"N\",\r\n                        \"dcmGnr\": \"N\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ],\r\n    \"oPlyAtrPT\": [\r\n        {\r\n            \"rskVal\": \"0\",\r\n            \"fldNam\": \"MCA_EXONERA_IMP\",\r\n            \"fldValVal\": \"N\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"NUM_MOTOR\",\r\n            \"fldValVal\": \"966822544\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"NUM_SERIE\",\r\n            \"fldValVal\": \"HGJJ585687686\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"NUM_MATRICULA\",\r\n            \"fldValVal\": \"1225366\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_COLOR\",\r\n            \"fldValVal\": \"4\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_MARCA\",\r\n            \"fldValVal\": \"1\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_TIP_VEHI\",\r\n            \"fldValVal\": \"1\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_MODELO\",\r\n            \"fldValVal\": \"3\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_SUB_MODELO\",\r\n            \"fldValVal\": \"3\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"ANIO_SUB_MODELO\",\r\n            \"fldValVal\": \"2010\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"NUM_PLAZAS\",\r\n            \"fldValVal\": \"5\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"FEC_COMPRA\",\r\n            \"fldValVal\": \"06042006\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"VAL_TOTAL_VEHI\",\r\n            \"fldValVal\": \"120000\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_USO_VEHI\",\r\n            \"fldValVal\": \"1\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"TIP_ACTIVIDAD\",\r\n            \"fldValVal\": \"999\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"MCA_DISPOSITIVO\",\r\n            \"fldValVal\": \"N\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_CIA_GPS\",\r\n            \"fldValVal\": \"\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"FEC_DISPOSITIVO_INI\",\r\n            \"fldValVal\": \"\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"FEC_DISPOSITIVO_FIN\",\r\n            \"fldValVal\": \"\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"NUM_ACCESORIOS\",\r\n            \"fldValVal\": 0\r\n        }\r\n    ],\r\n    \"oPlyOcaPT\": [],\r\n    \"oTpdRitPT\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Endpoint}}/{{ISU}}/newtron/api/issue/business_line/2.0/quotation/C000000073539/quotationPartialModification?cmpVal={{cmpVal}}&usrVal={{usrVal}}&efcDat=1760313600000&expDat=1791849600000&pmsVal=3",
+							"host": [
+								"{{Endpoint}}"
+							],
+							"path": [
+								"{{ISU}}",
+								"newtron",
+								"api",
+								"issue",
+								"business_line",
+								"2.0",
+								"quotation",
+								"C000000073539",
+								"quotationPartialModification"
+							],
+							"query": [
+								{
+									"key": "cmpVal",
+									"value": "{{cmpVal}}"
+								},
+								{
+									"key": "usrVal",
+									"value": "{{usrVal}}"
+								},
+								{
+									"key": "efcDat",
+									"value": "1760313600000"
+								},
+								{
+									"key": "expDat",
+									"value": "1791849600000"
+								},
+								{
+									"key": "pmsVal",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Presupuesto emitido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica si el código de estado es 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"let responseData=pm.response.json();\r",
+									"console.log(responseData.oPlyGniP.oPlyGniS.qtnVal);\r",
+									"pm.environment.set(\"numeroPresupuesto\", responseData.oPlyGniP.oPlyGniS.qtnVal); \r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.test(\"Mostrar la fecha de ejecución\", function () {\r",
+									"    let fechaActual = new Date();\r",
+									"\r",
+									"    // Formato: YYYY-MM-DD HH:mm:ss\r",
+									"    let fechaFormateada = fechaActual.getFullYear() + \"-\" +\r",
+									"        String(fechaActual.getMonth() + 1).padStart(2, '0') + \"-\" +\r",
+									"        String(fechaActual.getDate()).padStart(2, '0') + \" \" +\r",
+									"        String(fechaActual.getHours()).padStart(2, '0') + \":\" +\r",
+									"        String(fechaActual.getMinutes()).padStart(2, '0') + \":\" +\r",
+									"        String(fechaActual.getSeconds()).padStart(2, '0');\r",
+									"\r",
+									"    console.log(\"Fecha de ejecución:\", fechaFormateada);\r",
+									"    pm.environment.set(\"fecha_ejecucion\", fechaFormateada); // opcional: guardar en variable\r",
+									"});\r",
+									"\r",
+									"// Número de motor: 17 dígitos (solo números)\r",
+									"function generarNumeroMotor() {\r",
+									"    let motor = '';\r",
+									"    for (let i = 0; i < 17; i++) {\r",
+									"        motor += Math.floor(Math.random() * 10);\r",
+									"    }\r",
+									"    return motor;\r",
+									"}\r",
+									"\r",
+									"// Número de serie: 17 caracteres (mezcla de letras y números)\r",
+									"function generarNumeroSerie() {\r",
+									"    const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';\r",
+									"    const numeros = '0123456789';\r",
+									"    \r",
+									"    let serie = '';\r",
+									"    \r",
+									"    // 4 letras\r",
+									"    for (let i = 0; i < 4; i++) {\r",
+									"        serie += letras.charAt(Math.floor(Math.random() * letras.length));\r",
+									"    }\r",
+									"    \r",
+									"    // 9 números\r",
+									"    for (let i = 0; i < 9; i++) {\r",
+									"        serie += numeros.charAt(Math.floor(Math.random() * numeros.length));\r",
+									"    }\r",
+									"    console.log(serie);\r",
+									"    return serie;\r",
+									"}\r",
+									"\r",
+									"// Matrícula: 1 letra + 5 números\r",
+									"function generarMatricula() {\r",
+									"    const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';\r",
+									"    const randomLetter = letras.charAt(Math.floor(Math.random() * letras.length));\r",
+									"    let numeros = '';\r",
+									"    for (let i = 0; i < 5; i++) {\r",
+									"        numeros += Math.floor(Math.random() * 10);\r",
+									"    }\r",
+									"    return randomLetter + numeros;\r",
+									"}\r",
+									"\r",
+									"// Guardar en variables de entorno\r",
+									"pm.environment.set(\"numero_motor\", generarNumeroMotor());\r",
+									"pm.environment.set(\"numero_serie\", generarNumeroSerie());\r",
+									"pm.environment.set(\"matricula\", generarMatricula());\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lngVal",
+								"value": "{{lngVal}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oPlyInePT\": [\r\n        {\r\n            \"oPlyIneS\": {\r\n                \"cmpVal\": 5,\r\n                \"qtnVal\": \"{{plyVal}}\",\r\n                \"enrSqn\": 0,\r\n                \"rskVal\": 1,\r\n                \"aplEnrSqn\": 0,\r\n                \"aplVal\": 0,\r\n                \"thpDcmTypVal\": \"DNI\",\r\n                \"thpDcmVal\": \"0101198112377\",\r\n                \"bnfTypVal\": 2,\r\n                \"csnAmn\": null,\r\n                \"csnExpDat\": null,\r\n                \"lonVal\": null,\r\n                \"parPer\": null,\r\n                \"plyRskManThp\": \"N\",\r\n                \"rlnTypVal\": null,\r\n                \"sbtVal\": null,\r\n                \"sqnVal\": 1,\r\n                \"thpRskCll\": \"N\",\r\n                \"opvRow\": \"S\",\r\n                \"rowRmv\": \"N\",\r\n                \"adrSqnVal\": null,\r\n                \"cnhSqnVal\": \"4\"\r\n            },\r\n            \"oThpIpcC\": {\r\n                \"oThpAcvP\": {\r\n                    \"oThpAcvS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"DNI\",\r\n                        \"thpDcmVal\": \"0101198112377\",\r\n                        \"thpAcvVal\": 1,\r\n                        \"mdfDat\": 1762431145544,\r\n                        \"spl\": \"N\",\r\n                        \"dcmGnr\": \"N\"\r\n                    }\r\n                },\r\n                \"oThpPrsP\": {\r\n                    \"oThpPrsS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"DNI\",\r\n                        \"thpDcmVal\": \"0101198112377\",\r\n                        \"phyPrs\": \"S\",\r\n                        \"sexVal\": \"1\",\r\n                        \"thpDcmCck\": \"N\",\r\n                        \"thpNam\": \"JUAN\",\r\n                        \"thpScnNam\": \"MANUEL\",\r\n                        \"thpFrsSrn\": \"SANCHEZ\",\r\n                        \"thpScnSrn\": \"LOPEZ\",\r\n                        \"brdDat\": 364867200000,\r\n                        \"brtCnyVal\": \"HND\",\r\n                        \"brtSttVal\": \"8\",\r\n                        \"brtPvcVal\": \"801\",\r\n                        \"brtTwnVal\": \"80101\",\r\n                        \"mrtStsVal\": \"S\",\r\n                        \"ntnVal\": \"HND\",\r\n                        \"prfVal\": 1,\r\n                        \"jobVal\": 1,\r\n                        \"cstCtgVal\": \"PERS\",\r\n                        \"emnTypVal\": \"NEG\",\r\n                        \"fnpManAcvVal\": \"F003\",\r\n                        \"lngVal\": \"ES\",\r\n                        \"mdfDat\": 1762431145544,\r\n                        \"prsPce\": \"N\",\r\n                        \"ntnTypVal\": \"1\",\r\n                        \"slfAcn\": \"N\",\r\n                        \"txlOthCny\": \"N\"\r\n                    }\r\n                },\r\n                \"oThpAdrPT\": [],\r\n                \"oThpCntPT\": [\r\n                    {\r\n                        \"oThpCntS\": {\r\n                            \"cmpVal\": 5,\r\n                            \"thpDcmTypVal\": \"DNI\",\r\n                            \"thpDcmVal\": \"0101198112377\",\r\n                            \"thpAcvVal\": 1,\r\n                            \"cntTypVal\": \"1\",\r\n                            \"dsbRow\": \"N\",\r\n                            \"mdfDat\": 1762431145544,\r\n                            \"vldDat\": 1762431145544,\r\n                            \"cnhTypVal\": \"7\",\r\n                            \"cnhUseTypVal\": \"3\",\r\n                            \"cnhTxtVal\": \"TEST\",\r\n                            \"cntDprVal\": \"0001\",\r\n                            \"cntPstVal\": \"0001\",\r\n                            \"cnhCck\": \"N\",\r\n                            \"rfrThp\": \"N\"\r\n                        }\r\n                    }\r\n                ],\r\n                \"oThpPcmPT\": [],\r\n                \"oThpLcnPT\": [],\r\n                \"oThpInyP\": {\r\n                    \"oThpInyS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"DNI\",\r\n                        \"thpDcmVal\": \"0101198112377\",\r\n                        \"thpAcvVal\": 1,\r\n                        \"dsbRow\": \"N\"\r\n                    }\r\n                },\r\n                \"oThpArmPT\": [],\r\n                \"oThpTmnPT\": [],\r\n                \"oThpPcePT\": [],\r\n                \"oThpShlPT\": [],\r\n                \"oThpLgrPT\": [],\r\n                \"oTpdAlpPT\": [],\r\n                \"oThpUniPT\": [],\r\n                \"oThpTxlPT\": []\r\n            }\r\n        },\r\n        {\r\n            \"oPlyIneS\": {\r\n                \"cmpVal\": 5,\r\n                \"qtnVal\": \"{{plyVal}}\",\r\n                \"enrSqn\": 0,\r\n                \"rskVal\": 0,\r\n                \"aplEnrSqn\": 0,\r\n                \"aplVal\": 0,\r\n                \"thpDcmTypVal\": \"DNI\",\r\n                \"thpDcmVal\": \"0101198112377\",\r\n                \"bnfTypVal\": 21,\r\n                \"csnAmn\": null,\r\n                \"csnExpDat\": null,\r\n                \"lonVal\": null,\r\n                \"parPer\": 100,\r\n                \"plyRskManThp\": \"N\",\r\n                \"rlnTypVal\": null,\r\n                \"sbtVal\": null,\r\n                \"sqnVal\": 1,\r\n                \"thpRskCll\": \"N\",\r\n                \"opvRow\": \"S\",\r\n                \"rowRmv\": \"N\",\r\n                \"adrSqnVal\": null,\r\n                \"cnhSqnVal\": null\r\n            },\r\n            \"oThpIpcC\": {\r\n                \"oThpAcvP\": {\r\n                    \"oThpAcvS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"DNI\",\r\n                        \"thpDcmVal\": \"0101198112377\",\r\n                        \"thpAcvVal\": 1,\r\n                        \"mdfDat\": 1762431145544,\r\n                        \"spl\": \"N\",\r\n                        \"dcmGnr\": \"N\"\r\n                    }\r\n                },\r\n                \"oThpPrsP\": {\r\n                    \"oThpPrsS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"DNI\",\r\n                        \"thpDcmVal\": \"0101198112377\",\r\n                        \"phyPrs\": \"S\",\r\n                        \"sexVal\": \"\",\r\n                        \"thpDcmCck\": \"N\",\r\n                        \"thpNam\": \"\",\r\n                        \"thpFrsSrn\": \"\",\r\n                        \"brdDat\": null,\r\n                        \"brtCnyVal\": \"\",\r\n                        \"mrtStsVal\": \"\",\r\n                        \"ntnVal\": \"\",\r\n                        \"cstCtgVal\": \"\",\r\n                        \"emnTypVal\": \"\",\r\n                        \"fnpManAcvVal\": \"\",\r\n                        \"lngVal\": \"ES\",\r\n                        \"mdfDat\": 1762431145544,\r\n                        \"prsPce\": \"\",\r\n                        \"ntnTypVal\": \"1\",\r\n                        \"slfAcn\": \"N\",\r\n                        \"txlOthCny\": \"N\"\r\n                    }\r\n                },\r\n                \"oThpAdrPT\": [],\r\n                \"oThpCntPT\": [],\r\n                \"oThpPcmPT\": [],\r\n                \"oThpLcnPT\": [],\r\n                \"oThpInyP\": {\r\n                    \"oThpInyS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"DNI\",\r\n                        \"thpDcmVal\": \"0101198112377\",\r\n                        \"thpAcvVal\": 1,\r\n                        \"dsbRow\": \"N\"\r\n                    }\r\n                },\r\n                \"oThpArmPT\": [],\r\n                \"oThpTmnPT\": [],\r\n                \"oThpPcePT\": [],\r\n                \"oThpShlPT\": [],\r\n                \"oThpLgrPT\": [],\r\n                \"oTpdAlpPT\": [],\r\n                \"oThpUniPT\": [],\r\n                \"oThpTxlPT\": []\r\n            },\r\n            \"oThpLgrC\": {}\r\n        },\r\n        {\r\n            \"oPlyIneS\": {\r\n                \"cmpVal\": 5,\r\n                \"qtnVal\": \"{{plyVal}}\",\r\n                \"enrSqn\": 0,\r\n                \"rskVal\": 0,\r\n                \"aplEnrSqn\": 0,\r\n                \"aplVal\": 0,\r\n                \"thpDcmTypVal\": \"DNI\",\r\n                \"thpDcmVal\": \"0101198112377\",\r\n                \"bnfTypVal\": 0,\r\n                \"csnAmn\": null,\r\n                \"csnExpDat\": null,\r\n                \"lonVal\": null,\r\n                \"parPer\": null,\r\n                \"plyRskManThp\": \"N\",\r\n                \"rlnTypVal\": null,\r\n                \"sbtVal\": null,\r\n                \"sqnVal\": 1,\r\n                \"thpRskCll\": \"N\",\r\n                \"opvRow\": \"S\",\r\n                \"rowRmv\": \"N\",\r\n                \"adrSqnVal\": null,\r\n                \"cnhSqnVal\": null\r\n            },\r\n            \"oThpIpcC\": {\r\n                \"oThpAcvP\": {\r\n                    \"oThpAcvS\": {\r\n                        \"cmpVal\": 5,\r\n                        \"thpDcmTypVal\": \"DNI\",\r\n                        \"thpDcmVal\": \"0101198112377\",\r\n                        \"thpAcvVal\": 1,\r\n                        \"mdfDat\": 1762431145544,\r\n                        \"spl\": \"N\",\r\n                        \"dcmGnr\": \"N\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ],\r\n    \"oPlyAtrPT\": [\r\n        {\r\n            \"rskVal\": \"0\",\r\n            \"fldNam\": \"MCA_EXONERA_IMP\",\r\n            \"fldValVal\": \"N\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"NUM_MOTOR\",\r\n            \"fldValVal\": {{numero_motor}}\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"NUM_SERIE\",\r\n            \"fldValVal\": {{numero_serie}}\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"NUM_MATRICULA\",\r\n            \"fldValVal\": {{matricula}}\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_COLOR\",\r\n            \"fldValVal\": \"2\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_MARCA\",\r\n            \"fldValVal\": \"1\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_TIP_VEHI\",\r\n            \"fldValVal\": \"1\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_MODELO\",\r\n            \"fldValVal\": \"3\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_SUB_MODELO\",\r\n            \"fldValVal\": \"3\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"ANIO_SUB_MODELO\",\r\n            \"fldValVal\": \"2010\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"NUM_PLAZAS\",\r\n            \"fldValVal\": \"5\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"FEC_COMPRA\",\r\n            \"fldValVal\": \"06042006\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"VAL_TOTAL_VEHI\",\r\n            \"fldValVal\": \"100000\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_USO_VEHI\",\r\n            \"fldValVal\": \"1\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"TIP_ACTIVIDAD\",\r\n            \"fldValVal\": \"999\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"MCA_DISPOSITIVO\",\r\n            \"fldValVal\": \"N\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"COD_CIA_GPS\",\r\n            \"fldValVal\": \"\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"FEC_DISPOSITIVO_INI\",\r\n            \"fldValVal\": \"\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"FEC_DISPOSITIVO_FIN\",\r\n            \"fldValVal\": \"\"\r\n        },\r\n        {\r\n            \"rskVal\": \"1\",\r\n            \"fldNam\": \"NUM_ACCESORIOS\",\r\n            \"fldValVal\": 0\r\n        }\r\n    ],\r\n    \"oPlyOcaPT\": [],\r\n    \"oTpdRitPT\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Endpoint}}/{{ISU}}/newtron/api/issue/business_line/2.0/quotation/{{plyVal}}/quotationPartialModification?cmpVal={{cmpVal}}&usrVal={{usrVal}}&efcDat=1760313600000&expDat=1791849600000",
+							"host": [
+								"{{Endpoint}}"
+							],
+							"path": [
+								"{{ISU}}",
+								"newtron",
+								"api",
+								"issue",
+								"business_line",
+								"2.0",
+								"quotation",
+								"{{plyVal}}",
+								"quotationPartialModification"
+							],
+							"query": [
+								{
+									"key": "cmpVal",
+									"value": "{{cmpVal}}"
+								},
+								{
+									"key": "usrVal",
+									"value": "{{usrVal}}"
+								},
+								{
+									"key": "efcDat",
+									"value": "1760313600000"
+								},
+								{
+									"key": "expDat",
+									"value": "1791849600000"
+								},
+								{
+									"key": "pmsVal",
+									"value": "{{pmsVal}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "7",
+			"item": []
+		},
+		{
+			"name": "8",
+			"item": []
+		},
+		{
+			"name": "9",
+			"item": [
+				{
+					"name": "Emisión Poliza",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ES"
+							},
+							{
+								"key": "userBk",
+								"value": "TRON2000"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic QVBJVFJPTjpNYXBmcmUyMDE5"
+							}
+						],
+						"url": {
+							"raw": "{{Endpoint}}/reef_api_hn_be-web/api/Issue/postPolicySavedQuotationv1?companyId={{cmpVal}}&quotationNumber={{numeroPresupuesto}}",
+							"host": [
+								"{{Endpoint}}"
+							],
+							"path": [
+								"reef_api_hn_be-web",
+								"api",
+								"Issue",
+								"postPolicySavedQuotationv1"
+							],
+							"query": [
+								{
+									"key": "companyId",
+									"value": "{{cmpVal}}"
+								},
+								{
+									"key": "quotationNumber",
+									"value": "{{numeroPresupuesto}}"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl --location 'https://tron-pre-ca.reef.mapfre.net/reef_api_hn_be-web/api/Issue/postPolicySavedQuotationv1?companyId=5&quotationNumber={PRESUPUESTO}' \\\r\n--header 'Accept-Language: ES' \\\r\n--header 'userBk: TRON2000' \\\r\n--header 'Authorization: Basic QVBJVFJPTjpNYXBmcmUyMDE5'"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "Mapfre2019",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "APITRON",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

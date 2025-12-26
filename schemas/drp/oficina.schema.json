@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "codNivel3": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "nomNivel3": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": ["codNivel3", "nomNivel3"],
+    "additionalProperties": false
+  }
+}

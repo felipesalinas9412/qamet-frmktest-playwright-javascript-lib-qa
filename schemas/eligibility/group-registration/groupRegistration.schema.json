@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "groupRegistrationId": { "type": "integer" },
+    "groupNumber": { "type": "string" },
+    "description": { "type": "string" },
+    "registrationDateFrom": { "type": "string", "format": "date" },
+    "registrationDateTo": { "type": "string", "format": "date" },
+    "policyEffectiveDate": { "type": "string", "format": "date" },
+    "employerContribution": { "type": ["number", "null"] },
+    "groupEmailContact": { "type": "string" },
+    "producerNumber": { "type": "string" },
+    "employerContributionFlag": { "type": "boolean" },
+    "emloadPlanNumber": { "type": "string" },
+    "emloadClass": { "type": "string" },
+    "emloadPCS": { "type": "string" },
+    "emloadSpoBenClass": { "type": "string" },
+    "emloadDepBenClass": { "type": "string" },
+    "groupType": { "type": "string" },
+    "plansByLocationFlag": { "type": "boolean" },
+    "emloadPerLocationFlag": { "type": "boolean" },
+    "lifeFlag": { "type": "boolean" },
+    "lifeOptionalFlag": { "type": "boolean" },
+    "jointFlag": { "type": "boolean" },
+    "colateralFlag": { "type": "boolean" },
+    "active": { "type": "boolean" },
+    "createdBy": { "type": "string" },
+    "createdDate": { "type": "string", "format": "date" },
+
+    "groupRates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "rateId": { "type": "integer" },
+          "groupRegistrationId": { "type": "integer" },
+          "location": { "type": "string" },
+          "plan": { "type": "string" },
+          "coverageType": { "type": "string" },
+          "healthRate": { "type": "number" },
+          "majorMedical": { "type": ["number", "null"] },
+          "dental": { "type": ["number", "null"] },
+          "life": { "type": ["number", "null"] },
+          "colateralRate": { "type": ["number", "null"] },
+          "status": { "type": "string" },
+          "registrations": { "type": "array" }
+        },
+        "required": [
+          "rateId", "groupRegistrationId", "location", "plan", "coverageType",
+          "healthRate", "status", "registrations"
+        ],
+        "additionalProperties": false
+      }
+    },
+
+    "groupRegistrationLocations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "groupRegistrationLocationId": { "type": "integer" },
+          "groupRegistrationId": { "type": "integer" },
+          "location": { "type": "string" },
+          "emloadPlanNumber": { "type": "string" },
+          "emloadClass": { "type": "string" },
+          "emloadPCS": { "type": "string" },
+          "emloadSpoBenClass": { "type": "string" },
+          "emloadDepBenClass": { "type": "string" },
+          "createdBy": { "type": "string" },
+          "createdDate": { "type": "string", "format": "date" }
+        },
+        "required": [
+          "groupRegistrationLocationId", "groupRegistrationId", "location",
+          "createdBy", "createdDate"
+        ],
+        "additionalProperties": false
+      }
+    },
+
+    "registrations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "registrationId": { "type": "integer" },
+          "groupRegistrationId": { "type": "integer" },
+          "ssn": { "type": "string" },
+          "birthDate": { "type": "string", "format": "date" },
+          "rateId": { "type": ["integer", "null"] },
+          "memberId": { "type": ["string", "null"] },
+          "location": { "type": ["string", "null"] },
+          "name": { "type": ["string", "null"] },
+          "lastName": { "type": ["string", "null"] },
+          "sex": { "type": ["string", "null"] },
+          "address1": { "type": ["string", "null"] },
+          "address2": { "type": ["string", "null"] },
+          "city": { "type": ["string", "null"] },
+          "state": { "type": ["string", "null"] },
+          "zip": { "type": ["string", "null"] },
+          "zipExtension": { "type": ["string", "null"] },
+          "email": { "type": ["string", "null"] },
+          "phone": { "type": ["string", "null"] },
+          "formStatus": { "type": "string" },
+          "coverageType": { "type": ["string", "null"] },
+          "lifeFlag": { "type": ["boolean", "null"] },
+          "employerContribution": { "type": ["number", "null"] },
+          "signatureImage": { "type": ["string", "null"] },
+          "otherPlanFlag": { "type": ["boolean", "null"] },
+          "otherPlanName": { "type": ["string", "null"] },
+          "otherPlanNumber": { "type": ["string", "null"] },
+          "otherPlanInsured": { "type": ["string", "null"] },
+          "otherPlanCoverageType": { "type": ["string", "null"] },
+          "divulgeInfoFlag": { "type": ["boolean", "null"] },
+          "recieveInfoFlag": { "type": ["boolean", "null"] },
+          "internalFlag": { "type": ["boolean", "null"] },
+          "createdDate": { "type": "string", "format": "date" },
+          "lastUpdatedDate": { "type": "string", "format": "date" },
+          "completedDate": { "type": "string", "format": "date" },
+          "dependentsRegistrations": { "type": "array" },
+          "lifeBeneficiaries": { "type": "array" },
+          "rate": { "type": ["object", "null"] }
+        },
+        "required": [
+          "registrationId", "groupRegistrationId", "ssn", "birthDate", "formStatus",
+          "createdDate", "lastUpdatedDate", "completedDate", "dependentsRegistrations", "lifeBeneficiaries"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "groupRegistrationId", "groupNumber", "description", "registrationDateFrom", "registrationDateTo",
+    "policyEffectiveDate", "employerContributionFlag", "groupEmailContact", "producerNumber",
+    "emloadPlanNumber", "emloadClass", "emloadPCS", "emloadSpoBenClass", "emloadDepBenClass",
+    "groupType", "plansByLocationFlag", "emloadPerLocationFlag", "lifeFlag", "lifeOptionalFlag",
+    "jointFlag", "colateralFlag", "active", "createdBy", "createdDate", "groupRates",
+    "groupRegistrationLocations", "registrations"
+  ],
+  "additionalProperties": false
+}

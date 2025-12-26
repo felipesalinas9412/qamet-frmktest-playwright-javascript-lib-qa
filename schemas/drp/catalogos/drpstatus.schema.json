@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "cod_status": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "txt_status": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": ["cod_status", "txt_status"],
+    "additionalProperties": false
+  }
+}

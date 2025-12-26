@@ -1,0 +1,203 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SaveGroupRegistrationResponse",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "groupRegistrationId": { "type": "integer" },
+    "groupNumber": { "type": "string" },
+    "description": { "type": "string" },
+    "registrationDateFrom": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "registrationDateTo": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "policyEffectiveDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "employerContribution": { "type": "number" },
+    "groupEmailContact": { "type": "string" },
+    "producerNumber": { "type": "string" },
+    "employerContributionFlag": { "type": "boolean" },
+    "emloadPlanNumber": { "type": "string" },
+    "emloadClass": { "type": "string" },
+    "emloadPCS": { "type": "string" },
+    "emloadSpoBenClass": { "type": "string" },
+    "emloadDepBenClass": { "type": "string" },
+    "groupType": { "type": "string" },
+    "plansByLocationFlag": { "type": "boolean" },
+    "emloadPerLocationFlag": { "type": "boolean" },
+    "lifeFlag": { "type": "boolean" },
+    "lifeOptionalFlag": { "type": "boolean" },
+    "jointFlag": { "type": "boolean" },
+    "colateralFlag": { "type": "boolean" },
+    "active": { "type": "boolean" },
+    "createdBy": { "type": "string" },
+    "createdDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "groupRates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/groupRate" }
+    },
+    "groupRegistrationLocations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/groupRegistrationLocation" }
+    },
+    "registrations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/registration" }
+    }
+  },
+  "required": [
+    "groupRegistrationId",
+    "groupNumber",
+    "description",
+    "registrationDateFrom",
+    "registrationDateTo",
+    "policyEffectiveDate",
+    "createdBy",
+    "createdDate"
+  ],
+  "$defs": {
+    "groupRate": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "rateId": { "type": "integer" },
+        "groupRegistrationId": { "type": "integer" },
+        "location": { "type": "string" },
+        "plan": { "type": "string" },
+        "coverageType": { "type": "string" },
+        "healthRate": { "type": "number" },
+        "majorMedical": { "type": ["number", "null"] },
+        "dental": { "type": ["number", "null"] },
+        "life": { "type": ["number", "null"] },
+        "colateralRate": { "type": "number" },
+        "status": { "type": "string" },
+        "groupRegistration": { "type": ["string", "null"] },
+        "registrations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/registration" }
+        }
+      },
+      "required": ["rateId", "location", "plan", "coverageType", "healthRate", "status"]
+    },
+    "groupRegistrationLocation": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "groupRegistrationLocationId": { "type": "integer" },
+        "groupRegistrationId": { "type": "integer" },
+        "location": { "type": "string" },
+        "emloadPlanNumber": { "type": "string" },
+        "emloadClass": { "type": "string" },
+        "emloadPCS": { "type": "string" },
+        "emloadSpoBenClass": { "type": "string" },
+        "emloadDepBenClass": { "type": "string" },
+        "createdBy": { "type": "string" },
+        "createdDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "groupRegistration": { "type": ["string", "null"] }
+      },
+      "required": ["groupRegistrationLocationId", "location", "createdBy", "createdDate"]
+    },
+    "registration": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "registrationId": { "type": "integer" },
+        "groupRegistrationId": { "type": "integer" },
+        "ssn": { "type": "string" },
+        "birthDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "rateId": { "type": "integer" },
+        "memberId": { "type": "string" },
+        "location": { "type": "string" },
+        "name": { "type": "string" },
+        "lastName": { "type": "string" },
+        "sex": { "type": "string" },
+        "address1": { "type": "string" },
+        "address2": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "zip": { "type": "string" },
+        "zipExtension": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "formStatus": { "type": "string" },
+        "coverageType": { "type": "string" },
+        "lifeFlag": { "type": "boolean" },
+        "employerContribution": { "type": "number" },
+        "signatureImage": { "type": "string" },
+        "otherPlanFlag": { "type": "boolean" },
+        "otherPlanName": { "type": "string" },
+        "otherPlanNumber": { "type": "string" },
+        "otherPlanInsured": { "type": "string" },
+        "otherPlanCoverageType": { "type": "string" },
+        "divulgeInfoFlag": { "type": "boolean" },
+        "recieveInfoFlag": { "type": "boolean" },
+        "internalFlag": { "type": "boolean" },
+        "createdDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "lastUpdatedDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "completedDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "dependentsRegistrations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/dependentRegistration" }
+        },
+        "groupRegistration": { "type": ["string", "null"] },
+        "lifeBeneficiaries": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/lifeBeneficiary" }
+        },
+        "rate": { "type": "string" }
+      },
+      "required": ["registrationId", "name", "lastName", "createdDate"]
+    },
+    "dependentRegistration": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "dependentId": { "type": "integer" },
+        "registrationId": { "type": "integer" },
+        "name": { "type": "string" },
+        "lastName": { "type": "string" },
+        "birthDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "sex": { "type": "string" },
+        "relationship": { "type": "string" },
+        "relationExplanation": { "type": "string" },
+        "ssn": { "type": "string" },
+        "memberId": { "type": "string" },
+        "address1": { "type": "string" },
+        "address2": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "zip": { "type": "string" },
+        "zipExtension": { "type": "string" },
+        "residesHomeFlag": { "type": "boolean" },
+        "sameAddressFlag": { "type": "boolean" },
+        "handicapFlag": { "type": "boolean" },
+        "colateralFlag": { "type": "boolean" },
+        "jointFlag": { "type": "boolean" },
+        "jointContribution": { "type": "number" },
+        "jointGroupNumber": { "type": "string" },
+        "registration": { "type": ["string", "null"] }
+      },
+      "required": ["dependentId", "name", "lastName"]
+    },
+    "lifeBeneficiary": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "beneficiaryId": { "type": "integer" },
+        "registrationId": { "type": "integer" },
+        "name": { "type": "string" },
+        "lastName": { "type": "string" },
+        "birthDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "relationship": { "type": "string" },
+        "ssn": { "type": "string" },
+        "memberId": { "type": "string" },
+        "address1": { "type": "string" },
+        "address2": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "zip": { "type": "string" },
+        "zipExtension": { "type": "string" },
+        "benefitPercentage": { "type": "number" },
+        "registration": { "type": ["string", "null"] }
+      },
+      "required": ["beneficiaryId", "name", "lastName", "benefitPercentage"]
+    }
+  }
+}
