@@ -32,9 +32,9 @@ async function createAPIClient({ api, baseURL, auth} = {}) {
 
   if (auth === true){
 
-    const  token = process.env.API_BEARER_TOKEN;
+    const  token = process.env.API_TOKEN;
     if(!token){
-      throw new Error(`API_BEARER_TOKEN no está definido en el archivo .env`);
+      throw new Error(`API_TOKEN no está definido en el archivo .env`);
     }
     headers.Authorization = `Bearer ${token}`;
   }

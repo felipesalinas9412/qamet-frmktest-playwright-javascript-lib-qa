@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "pageSize": {
+      "type": "integer"
+    },
+    "pageNumber": {
+      "type": "integer"
+    },
+    "totalPages": {
+      "type": "integer"
+    },
+    "totalElements": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "portfolioId": { "type": "string" },
+          "policyNumber": { "type": "string" },
+
+          "policyStatus": {
+            "type": "object",
+            "properties": {
+              "statusCode": { "type": "string" }
+            },
+            "additionalProperties": true
+          },
+
+          "insuredId": { "type": "string" },
+          "productId": { "type": "string" },
+          "productType": { "type": "string" },
+
+          "commercialModeCodes": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+
+          "serviceModeCodes": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+
+          "guarantees": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "guaranteeId": { "type": "string" },
+                "guaranteeGroupCode": { "type": "string" }
+              },
+              "additionalProperties": true
+            }
+          },
+
+          "insuranceCards": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "number": { "type": "string" },
+                "statusCode": { "type": "string" }
+              },
+              "additionalProperties": true
+            }
+          },
+
+          "clauses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "clauseCode": { "type": "string" }
+              },
+              "additionalProperties": true
+            }
+          },
+
+          "copay": {
+            "type": "boolean"
+          },
+
+          "address": {
+            "type": "object",
+            "properties": {
+              "zipCode": { "type": "string" },
+              "province": { "type": "string" }
+            },
+            "additionalProperties": true
+          },
+
+          "updatedByUser": { "type": "string" },
+          "updatedAt": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": ["pageSize", "pageNumber", "totalPages", "totalElements", "items"],
+  "additionalProperties": false
+}
