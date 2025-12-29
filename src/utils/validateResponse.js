@@ -10,6 +10,7 @@ async function validateCommonApiResponse(res, schema) {
   expect(res.status(), 'Status HTTP no es 200').toBe(200);
   const body = await res.json();
 
+  console.log(body);
   expect(Array.isArray(body), 'La respuesta no es un arreglo').toBe(true);
   expect(body.length, 'El array está vacío').toBeGreaterThan(0);
   expect(validateSchema(body, schema), 'No cumple con el esquema JSON').toBe(true);
