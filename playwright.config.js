@@ -19,7 +19,7 @@ module.exports = defineConfig({
   projects: [
     { name: 'p1', testMatch: /tests\/drp\/.*\.test\.js/, use: { baseURL: P1 } },
     { name: 'p2', testMatch: /tests\/eligibility\/.*\.test\.js/, use: { baseURL: P2 } },
-    { name: 'p3', testMatch: /tests\/insurance\/.*\.test\.js/, use: { baseURL: P3 } },
+    { name: 'p3', testMatch: /tests\/storage\/.*\.test\.js/, use: { baseURL: P3 } },
   ],
   globalSetup: require.resolve('./register-aliases.js'),
 });
