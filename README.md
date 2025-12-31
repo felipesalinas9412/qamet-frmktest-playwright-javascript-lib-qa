@@ -56,11 +56,16 @@ npm i ajv ajv-formats
 Crea un archivo **`.env`** en la raíz del proyecto (al lado de `package.json`) con este contenido de ejemplo:
 
 ```env
+```env
 # API p1 (DRP)
 P1_BASE_URL=https://preprod.mapfrepr.com/MPRPACIssuanceIntegrationAPI/api/v1
 
 # API p2 (Eligibility / Health)
 P2_BASE_URL=https://preprod.mapfrehealth.com/HealthElegibilityRestServices/api/v1
+
+#API p3 (Storage)
+P3_BASE_URL=https://api-str.pre.reef.health.es.mapfre.com/workshop/v1/
+API_TOKEN=
 
 # Parámetros dinámicos de pruebas (p2)
 P2_GROUP_REG_ID=1
