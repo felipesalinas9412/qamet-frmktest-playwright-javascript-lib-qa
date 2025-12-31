@@ -115,6 +115,10 @@ npx playwright test tests/drp/prerenovDetail/HealthCheckPrerenovDetail.test.js
 npx playwright test tests/drp/prerenovHeader/HealthCheckPrerenovHeader.test.js
 
 npx playwright test tests/eligibility/group-registration/HealthCheckGroupRegistration.test.js
+
+npx playwright test tests/storage/
+npx playwright test tests/storage/groupPolicy/GroupPolicyCheck.test.js
+npx playwright test tests/storage/insurance/InsurancePolicyCheck.test.js
 ```
 
 ### 3) Filtrar por nombre del test

@@ -1,6 +1,5 @@
 const { test, expect } = require('@playwright/test');
 const { createAPIClient } = require('@api/client');
-const { setTestData } = require('@utils/reportUtils');
 const endpoints = require('@api/endpoints');
 // Validaciones respuestas API
 const { validateCommonApiJSONResponse, validateNotCommonApiJSONResponse, validateResponseMandatoryFields, expectNonEmptyString } = require('@utils/validateResponse');

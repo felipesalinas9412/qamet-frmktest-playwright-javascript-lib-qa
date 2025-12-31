@@ -51,6 +51,9 @@ module.exports = {
       getWithDateInsurancePolicy: 'insurance_policies-photos/search?thirdPartyInternalId=330749452011&date=2025-12-31T00:00:00.000Z&pageNumber=1&pageSize=10',
       koInsurancePolicy: 'insurance_policies-photos/search?policyNumber=prueba&thirdPartyInternalId=330749452011&pageNumber=1&pageSize=10',
       notFoundInsurancePolicy: 'insurance_policies-photos/search?thirdPartyInternalId=3307494520110&pageNumber=1&pageSize=10'
-    }
+    },
+    groupPolicy: {
+      getGroupPolicy: 'group_policies-photos/search?policyNumber=9474230&pageNumber=1&pageSize=10',
+    },
   }
 };
